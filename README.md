@@ -2,6 +2,8 @@
 
 Personal portfolio of **Sagar Shahi** (Sagar Bahadur Shahi) — computer engineering student and Django developer in Kathmandu, Nepal. Live at **https://sagarshahi865.github.io/**.
 
+![Portfolio preview](preview.jpg)
+
 ## What's on the site
 
 - **Hero** — intro, live-demo CTA, stats (team commits, live workouts, systems) and Nepal-time clock
@@ -27,7 +29,7 @@ python3 -m http.server 8000
 
 ## Customizing
 
-- Skills sphere words: edit the `WORDS` array near the end of `index.html`
+- Skills sphere words: edit the `ITEMS` array near the end of `index.html` (logos with text fallback)
 - Hero stats: edit the `.stat` blocks (numbers animate via `data-to`)
 - Repository links: update the `gh-live` fallback list and `sameAs` JSON-LD together
 

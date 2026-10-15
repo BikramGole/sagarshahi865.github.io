@@ -17,6 +17,8 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2305060d'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='36' font-weight='800' text-anchor='middle' fill='%23f29a3f'%3ESS%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://cdn.simpleicons.org">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <script type="speculationrules">{"prefetch":[{"source":"document","where":{"href_matches":["https://fitnesshub123.pythonanywhere.com/*","https://github.com/*"]},"eagerness":"moderate"}]}</script>
@@ -203,6 +205,12 @@ h3.sub { font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; 
 .sphere-wrap .hint { position: absolute; left: 14px; bottom: 12px; color: var(--muted); pointer-events: none; }
 .skillgroups { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
 .skillgroups h3 { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; font-weight: 500; }
+.logos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+.logo-card { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid var(--rule); border-radius: 8px; background: var(--card); min-width: 0; transition: border-color 0.3s, transform 0.4s var(--ease); }
+.logo-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.logo-card img { width: 40px; height: 40px; object-fit: contain; flex: none; }
+.logo-card b { display: block; font-family: var(--font-display); font-size: 1.02rem; letter-spacing: -0.01em; line-height: 1.2; }
+.logo-card span { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-top: 2px; }
 
 /* faq */
 .faq { border-top: 1px solid var(--rule); }
@@ -647,32 +655,38 @@ main { display: contents; }
     <div class="chap-head reveal">
       <span class="eyebrow">Chapter 04</span>
       <h2 id="skills-h">What I <span class="em">use</span></h2>
-      <p class="chap-sub">Drag the sphere — or use the rotate buttons for keyboard / single-pointer control. Same list follows as text.</p>
+      <p class="chap-sub">Drag the logo sphere — or use the rotate buttons for keyboard / single-pointer control. Every tool below as cards.</p>
     </div>
     <div class="sphere-wrap reveal">
-      <canvas id="sphere" role="img" aria-label="Rotating word sphere: Python, Django, Java, C++, CSS, DBMS and related tools"></canvas>
+      <canvas id="sphere" role="img" aria-label="Rotating logo sphere: Python, Django, JavaScript, HTML, CSS, Java, C++, SQLite, Git, GitHub, Stripe and GitHub Actions"></canvas>
       <span class="hint mono">Drag to rotate</span>
     </div>
     <div class="sphere-ctl reveal" role="group" aria-label="Rotate skills sphere">
       <button class="btn ghost" id="spin-l" type="button">← Rotate</button>
       <button class="btn ghost" id="spin-r" type="button">Rotate →</button>
     </div>
+    <ul class="logos reveal" aria-label="Tools I build with">
+      <li class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async"><div><b>Python</b><span>Django apps</span></div></li>
+      <li class="logo-card"><img src="https://cdn.simpleicons.org/django/white" alt="" width="40" height="40" loading="lazy" decoding="async"><div><b>Django</b><span>Backend + ORM</span></div></li>
+      <li class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async"><div><b>JavaScript</b><span>Frontend logic</span></div></li>
+      <li class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async"><div><b>HTML</b><span>Templates</span></div></li>
+      <li class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async"><div><b>CSS</b><span>Styling</span></div></li>
+      <li class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async"><div><b>Java</b><span>Coursework</span></div></li>
+      <li class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async"><div><b>C++</b><span>Coursework</span></div></li>
+      <li class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async"><div><b>SQLite</b><span>DBMS</span></div></li>
+      <li class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async"><div><b>Git</b><span>Version control</span></div></li>
+      <li class="logo-card"><img src="https://cdn.simpleicons.org/github/white" alt="" width="40" height="40" loading="lazy" decoding="async"><div><b>GitHub</b><span>Repos + CI</span></div></li>
+      <li class="logo-card"><img src="https://cdn.simpleicons.org/stripe" alt="" width="40" height="40" loading="lazy" decoding="async"><div><b>Stripe</b><span>Test checkout</span></div></li>
+      <li class="logo-card"><img src="https://cdn.simpleicons.org/githubactions" alt="" width="40" height="40" loading="lazy" decoding="async"><div><b>Actions</b><span>Migrations + tests</span></div></li>
+    </ul>
     <div class="skillgroups reveal">
       <div>
-        <h3>Backend</h3>
-        <ul class="tags"><li>Python</li><li>Django</li><li>Java</li><li>C++</li><li>CRUD design</li><li>Sessions &amp; carts</li></ul>
+        <h3>Patterns I practise</h3>
+        <ul class="tags"><li>CRUD design</li><li>Sessions &amp; carts</li><li>Dashboards</li><li>Testing</li><li>Seed data</li></ul>
       </div>
       <div>
-        <h3>Payments &amp; tooling</h3>
-        <ul class="tags"><li>Stripe Checkout</li><li>Git &amp; GitHub</li><li>GitHub Actions</li><li>Testing</li><li>Seed data</li></ul>
-      </div>
-      <div>
-        <h3>Web &amp; interface</h3>
-        <ul class="tags"><li>Web development</li><li>JavaScript</li><li>CSS</li><li>HTML templates</li><li>Dashboards</li></ul>
-      </div>
-      <div>
-        <h3>Studying and practising</h3>
-        <ul class="tags"><li>DBMS</li><li>COA</li><li>Operating systems</li><li>C++</li><li>Java</li></ul>
+        <h3>Studying</h3>
+        <ul class="tags"><li>DBMS</li><li>COA</li><li>Operating systems</li><li>Web development</li></ul>
       </div>
     </div>
   </section>
@@ -922,14 +936,28 @@ main { display: contents; }
     });
   }
 
-  /* skills sphere: edit this list to change the words */
-  var WORDS = ['Python', 'Django', 'JavaScript', 'Java', 'C++', 'HTML templates', 'CSS', 'DBMS', 'Operating systems', 'Web development', 'Groq AI', 'Stripe Checkout', 'Git', 'GitHub', 'GitHub Actions', 'CRUD', 'Sessions', 'Dashboards', 'Testing', 'Achievements'];
+  /* skills sphere: logos orbit here — edit this list to change them (text draws until each logo loads) */
+  var ITEMS = [
+    { t: 'Python', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+    { t: 'Django', u: 'https://cdn.simpleicons.org/django/white' },
+    { t: 'JavaScript', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+    { t: 'HTML', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+    { t: 'CSS', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+    { t: 'Java', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+    { t: 'C++', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
+    { t: 'SQLite', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg' },
+    { t: 'Git', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+    { t: 'GitHub', u: 'https://cdn.simpleicons.org/github/white' },
+    { t: 'Stripe', u: 'https://cdn.simpleicons.org/stripe' },
+    { t: 'Actions', u: 'https://cdn.simpleicons.org/githubactions' }
+  ];
+  ITEMS.forEach(function (it) { try { var im = new Image(); im.decoding = 'async'; it.im = im; it.ok = false; im.onload = function () { it.ok = true; }; im.onerror = function () { it.ok = false; }; im.src = it.u; } catch (e) {} });
   var cv = document.getElementById('sphere');
   if (cv && cv.getContext) {
-    var ctx = cv.getContext('2d'), n = WORDS.length;
-    var pts = WORDS.map(function (w, i) {
+    var ctx = cv.getContext('2d'), n = ITEMS.length;
+    var pts = ITEMS.map(function (it, i) {
       var y = 1 - (i / (n - 1)) * 2, r = Math.sqrt(1 - y * y), t = i * 2.399963;
-      return { w: w, x: Math.cos(t) * r, y: y, z: Math.sin(t) * r };
+      return { it: it, x: Math.cos(t) * r, y: y, z: Math.sin(t) * r };
     });
     var W = 0, H = 0, dpr = 1, rotX = 0.35, rotY = 0, vx = 0, vy = 0.004, drag = false, lx = 0, ly = 0, vis = false, raf = 0;
     var cs = getComputedStyle(root), accent = cs.getPropertyValue('--accent').trim(), fg = cs.getPropertyValue('--fg').trim(), mono = cs.getPropertyValue('--font-mono').trim();
@@ -945,15 +973,27 @@ main { display: contents; }
       var pr = pts.map(function (p) {
         var x1 = p.x * cY + p.z * sY, z1 = -p.x * sY + p.z * cY;
         var y1 = p.y * cX - z1 * sX, z2 = p.y * sX + z1 * cX, s = 3 / (3 - z2);
-        return { w: p.w, x: cx + x1 * R * s, y: cy + y1 * R * s, z: z2 };
+        return { it: p.it, x: cx + x1 * R * s, y: cy + y1 * R * s, z: z2 };
       }).sort(function (a, b) { return a.z - b.z; });
       ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
       pr.forEach(function (p) {
         var d = (p.z + 1) / 2;
-        ctx.globalAlpha = 0.2 + 0.8 * d;
-        ctx.fillStyle = d > 0.72 ? accent : fg;
-        ctx.font = '500 ' + (11 + 9 * d).toFixed(1) + 'px ' + mono;
-        ctx.fillText(p.w, p.x, p.y);
+        var im = p.it.im;
+        if (p.it.ok && im && im.complete) {
+          var s = 30 + 30 * d;
+          ctx.globalAlpha = 0.35 + 0.65 * d;
+          try { ctx.drawImage(im, p.x - s / 2, p.y - s / 2, s, s); } catch (e) {
+            ctx.globalAlpha = 0.2 + 0.8 * d;
+            ctx.fillStyle = d > 0.72 ? accent : fg;
+            ctx.font = '500 ' + (11 + 9 * d).toFixed(1) + 'px ' + mono;
+            ctx.fillText(p.it.t, p.x, p.y);
+          }
+        } else {
+          ctx.globalAlpha = 0.2 + 0.8 * d;
+          ctx.fillStyle = d > 0.72 ? accent : fg;
+          ctx.font = '500 ' + (11 + 9 * d).toFixed(1) + 'px ' + mono;
+          ctx.fillText(p.it.t, p.x, p.y);
+        }
       });
       ctx.globalAlpha = 1;
     };
