@@ -9,7 +9,7 @@ Personal portfolio of **Sagar Shahi** (Sagar Bahadur Shahi) — computer enginee
 - **Hero** — intro, live-demo CTA, stats (team commits, live workouts, systems) and Nepal-time clock
 - **Name pronunciation** — speaker button in the navbar plays pre-recorded `sagarshahi.mp3` (no browser TTS)
 - **Selected work** — team-built Fitness Hub (`FitHub-4/Fitness-Hub`, live at `fitnesshub123.pythonanywhere.com`), solo `fitness-hub` continuation, and open-source profile
-- **Live from GitHub** — repositories auto-fetched from [`github.com/sagarshahi865`](https://github.com/sagarshahi865) via the public API (lazy, with static fallback)
+- **Latest on GitHub** — repositories auto-fetched from [`github.com/sagarshahi865`](https://github.com/sagarshahi865) via the public API (hourly local cache, graceful error message)
 - **Services & process** — Django apps, dashboards, store/checkout, CI
 - **Journey** — FitHub-4 team build, Abyssal Oath collective membership, OJT, studies
 - **Skills sphere** — draggable canvas (keyboard alternative included) plus plain-text lists
@@ -32,7 +32,7 @@ python3 -m http.server 8000
 
 - Skills sphere words: edit the `ITEMS` array near the end of `index.html` (logos with text fallback)
 - Hero stats: edit the `.stat` blocks (numbers animate via `data-to`)
-- Repository links: update the `gh-live` fallback list and `sameAs` JSON-LD together
+- Repository links: Sagar's `SKIP` list in the GitHub script and the `sameAs` JSON-LD live together — update both
 
 ## Links
 
