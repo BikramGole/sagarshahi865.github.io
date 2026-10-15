@@ -84,6 +84,10 @@ button { font: inherit; color: inherit; }
   padding-block: 12px;
 }
 .nav .brand { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.02em; text-decoration: none; font-size: 1.1rem; }
+.brand-wrap { display: flex; align-items: center; gap: 2px; }
+.say { width: 44px; height: 44px; flex: none; display: inline-grid; place-items: center; border: 0; border-radius: 50%; background: transparent; color: var(--muted); cursor: pointer; transition: color 0.25s, background 0.25s; }
+.say:hover { color: var(--accent); background: var(--card); }
+.say[aria-pressed="true"] { color: var(--accent); background: var(--card); }
 .nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px 20px; overflow-x: auto; scrollbar-width: none; min-width: 0; max-width: 100%; }
 .nav ul::-webkit-scrollbar { display: none; }
 .nav a.link { font-family: var(--font-mono); font-size: 13px; text-decoration: none; padding: 6px 0; color: var(--muted); display: inline-block; white-space: nowrap; }
@@ -374,7 +378,13 @@ main { display: contents; }
 <div class="wrap">
   <a class="skip" href="#main">Skip to content</a>
   <nav class="nav" aria-label="Main">
-    <a class="brand" href="#top">Sagar Shahi</a>
+    <div class="brand-wrap">
+      <a class="brand" href="#top">Sagar Shahi</a>
+      <button class="say" id="say-name" type="button" aria-label="Play pronunciation of Sagar Shahi" aria-pressed="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+      </button>
+      <audio id="say-audio" src="sagarshahi.mp3" preload="auto"></audio>
+    </div>
     <ul>
       <li><a class="link" href="#work">Work</a></li>
       <li><a class="link" href="#services">Services</a></li>
@@ -976,6 +986,25 @@ main { display: contents; }
       try { navigator.clipboard.writeText(bText.textContent).then(function () { done(true); }, fb); } catch (x) { fb(); }
     });
   }
+
+  /* name pronunciation: pre-recorded clip, no browser TTS */
+  (function sayName() {
+    var btn = document.getElementById('say-name'), au = document.getElementById('say-audio');
+    if (!btn || !au) return;
+    function stopped() { btn.setAttribute('aria-pressed', 'false'); }
+    au.addEventListener('ended', stopped);
+    au.addEventListener('pause', stopped);
+    au.addEventListener('error', stopped);
+    btn.addEventListener('click', function () {
+      try {
+        if (!au.paused) { au.pause(); au.currentTime = 0; stopped(); return; }
+        au.currentTime = 0;
+        var pr = au.play();
+        if (pr && typeof pr.catch === 'function') pr.catch(stopped); else btn.setAttribute('aria-pressed', 'true');
+        if (pr && typeof pr.then === 'function') pr.then(function () { btn.setAttribute('aria-pressed', 'true'); }, stopped);
+      } catch (e) { stopped(); }
+    });
+  })();
 
   /* skills sphere: logos orbit here — edit this list to change them (text draws until each logo loads) */
   var ITEMS = [

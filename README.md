@@ -7,6 +7,7 @@ Personal portfolio of **Sagar Shahi** (Sagar Bahadur Shahi) — computer enginee
 ## What's on the site
 
 - **Hero** — intro, live-demo CTA, stats (team commits, live workouts, systems) and Nepal-time clock
+- **Name pronunciation** — speaker button in the navbar plays pre-recorded `sagarshahi.mp3` (no browser TTS)
 - **Selected work** — team-built Fitness Hub (`FitHub-4/Fitness-Hub`, live at `fitnesshub123.pythonanywhere.com`), solo `fitness-hub` continuation, and open-source profile
 - **Live from GitHub** — repositories auto-fetched from [`github.com/sagarshahi865`](https://github.com/sagarshahi865) via the public API (lazy, with static fallback)
 - **Services & process** — Django apps, dashboards, store/checkout, CI
